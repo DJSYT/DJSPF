@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Dashboard - DJS_YT</title>
+    <meta name="description" content="Application dashboard for DJS_YT portfolio. Interactive control panel for managing projects and client interactions.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">DJS_YT</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="domain.html">Domain Generator</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="app.html" class="active">App</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- App Dashboard Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Application Dashboard</h2>
+                <div class="divider"></div>
+                <p class="section-description">Interactive control panel for portfolio management</p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="dashboard-stats">
+                <div class="grid grid-4">
+                    <div class="stat-card card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="totalProjects">12</h3>
+                            <p class="stat-label">Active Projects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="totalClients">48</h3>
+                            <p class="stat-label">Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="avgRating">4.9</h3>
+                            <p class="stat-label">Average Rating</p>
+                        </div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="completionRate">98%</h3>
+                            <p class="stat-label">Completion Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <div class="card">
+                    <h3 class="section-subtitle">⚡ Quick Actions</h3>
+                    <div class="grid grid-3">
+                        <button class="action-btn card" onclick="createNewProject()">
+                            <div class="action-icon">➕</div>
+                            <h4>New Project</h4>
+                            <p>Start a new client project</p>
+                        </button>
+                        <button class="action-btn card" onclick="viewAnalytics()">
+                            <div class="action-icon">📈</div>
+                            <h4>Analytics</h4>
+                            <p>View performance metrics</p>
+                        </button>
+                        <button class="action-btn card" onclick="manageClients()">
+                            <div class="action-icon">👨‍💼</div>
+                            <h4>Client Management</h4>
+                            <p>Manage client relationships</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3 class="section-subtitle">📋 Recent Projects</h3>
+                        <div class="activity-list" id="recentProjects">
+                            <div class="activity-item">
+                                <div class="activity-icon">🤖</div>
+                                <div class="activity-content">
+                                    <h4>Discord Moderation Bot</h4>
+                                    <p>Advanced anti-spam system with AI integration</p>
+                                    <span class="activity-status status-progress">In Progress</span>
+                                </div>
+                                <div class="activity-date">2 days ago</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🌐</div>
+                                <div class="activity-content">
+                                    <h4>Portfolio Website</h4>
+                                    <p>Custom portfolio for indie game developer</p>
+                                    <span class="activity-status status-completed">Completed</span>
+                                </div>
+                                <div class="activity-date">1 week ago</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📦</div>
+                                <div class="activity-content">
+                                    <h4>Minecraft Plugin</h4>
+                                    <p>Custom economy system with shops</p>
+                                    <span class="activity-status status-review">Under Review</span>
+                                </div>
+                                <div class="activity-date">3 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="section-subtitle">💬 Recent Messages</h3>
+                        <div class="activity-list" id="recentMessages">
+                            <div class="activity-item">
+                                <div class="activity-icon">📧</div>
+                                <div class="activity-content">
+                                    <h4>New Project Inquiry</h4>
+                                    <p>Discord bot with custom economy features</p>
+                                    <span class="activity-status status-new">New</span>
+                                </div>
+                                <div class="activity-date">1 hour ago</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">💰</div>
+                                <div class="activity-content">
+                                    <h4>Payment Received</h4>
+                                    <p>Final payment for web development project</p>
+                                    <span class="activity-status status-completed">Completed</span>
+                                </div>
+                                <div class="activity-date">6 hours ago</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">⭐</div>
+                                <div class="activity-content">
+                                    <h4>Client Review</h4>
+                                    <p>5-star review for Minecraft addon</p>
+                                    <span class="activity-status status-positive">Positive</span>
+                                </div>
+                                <div class="activity-date">2 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Tools -->
+            <div class="app-tools">
+                <div class="card">
+                    <h3 class="section-subtitle">🛠️ Development Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item card">
+                            <div class="tool-icon">💻</div>
+                            <h4>Code Editor</h4>
+                            <p>Built-in code editor with syntax highlighting</p>
+                            <button class="btn tool-btn">Open Editor</button>
+                        </div>
+                        <div class="tool-item card">
+                            <div class="tool-icon">🗃️</div>
+                            <h4>File Manager</h4>
+                            <p>Organize project files and assets</p>
+                            <button class="btn tool-btn">Open Files</button>
+                        </div>
+                        <div class="tool-item card">
+                            <div class="tool-icon">🔧</div>
+                            <h4>Project Builder</h4>
+                            <p>Build and deploy projects automatically</p>
+                            <button class="btn tool-btn">Start Build</button>
+                        </div>
+                        <div class="tool-item card">
+                            <div class="tool-icon">📊</div>
+                            <h4>Performance Monitor</h4>
+                            <p>Monitor application performance and logs</p>
+                            <button class="btn tool-btn">View Metrics</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="system-status">
+                <div class="card">
+                    <h3 class="section-subtitle">⚡ System Status</h3>
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <div class="status-indicator status-online"></div>
+                            <span class="status-label">MineCloud.gg Server</span>
+                            <span class="status-value">Online</span>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-indicator status-online"></div>
+                            <span class="status-label">Botonomy Bot</span>
+                            <span class="status-value">Active</span>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-indicator status-warning"></div>
+                            <span class="status-label">Database</span>
+                            <span class="status-value">High Usage</span>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-indicator status-online"></div>
+                            <span class="status-label">Discord Webhook</span>
+                            <span class="status-value">Connected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+                <p class="footer-text">
+                    Built by Nexus ❤️ Powered by Nexus
+                </p>
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+            </div>
+            <p class="footer-subtitle">Domain Expansion of Code • DJS_YT Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

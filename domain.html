@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Generator - DJS_YT</title>
+    <meta name="description" content="Discover your unique Domain Expansion based on your birth date. Interactive anime-themed generator inspired by Domain Expansion techniques.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">DJS_YT</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="domain.html" class="active">Domain Generator</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Domain Generator Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Domain Expansion Generator</h2>
+                <div class="divider"></div>
+                <p class="section-description">Discover your unique Domain Expansion based on your birth date</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="generator-header">
+                        <h3>Enter Your Birth Date</h3>
+                        <p>Each birth detail contributes to your domain's unique power</p>
+                    </div>
+                    
+                    <form id="domainForm" class="domain-form">
+                        <div class="form-group">
+                            <label class="form-label">📅 Birth Month</label>
+                            <select class="form-select" id="birthMonth">
+                                <option value="">Select Month</option>
+                                <option value="JAN">January</option>
+                                <option value="FEB">February</option>
+                                <option value="MAR">March</option>
+                                <option value="APR">April</option>
+                                <option value="MAY">May</option>
+                                <option value="JUN">June</option>
+                                <option value="JUL">July</option>
+                                <option value="AUG">August</option>
+                                <option value="SEP">September</option>
+                                <option value="OCT">October</option>
+                                <option value="NOV">November</option>
+                                <option value="DEC">December</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label"># Birth Day</label>
+                            <select class="form-select" id="birthDay">
+                                <option value="">Select Day</option>
+                                <!-- Days 1-31 will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">🕐 Birth Year</label>
+                            <input type="number" class="form-input" id="birthYear" min="1950" max="2025" placeholder="Enter your birth year">
+                        </div>
+                        
+                        <button type="button" class="btn generator-btn" onclick="generateDomain()">
+                            ✨ Generate Domain Expansion
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <div class="result-header">
+                        <h3>Your Domain Expansion</h3>
+                    </div>
+                    
+                    <div id="domainResult" class="domain-result">
+                        <div class="result-placeholder">
+                            <div class="placeholder-icon">✨</div>
+                            <p class="placeholder-text">Your Domain Expansion will appear here</p>
+                            <p class="placeholder-subtext">Enter your birth details to discover your unique domain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Explanation Section -->
+            <div class="domain-explanation">
+                <div class="card">
+                    <h3 class="explanation-title">🎯 How Domain Expansion Works</h3>
+                    <div class="grid grid-3">
+                        <div class="explanation-item">
+                            <div class="explanation-icon">📅</div>
+                            <h4>Birth Month</h4>
+                            <p>Determines the <strong>adjective</strong> of your domain - the fundamental energy and atmosphere that shapes your power.</p>
+                        </div>
+                        
+                        <div class="explanation-item">
+                            <div class="explanation-icon">#</div>
+                            <h4>Birth Day</h4>
+                            <p>Defines the <strong>core element</strong> - the physical manifestation and primary focus of your domain's abilities.</p>
+                        </div>
+                        
+                        <div class="explanation-item">
+                            <div class="explanation-icon">🕐</div>
+                            <h4>Birth Year</h4>
+                            <p>Creates the <strong>domain suffix</strong> - the deeper meaning and ultimate purpose of your expansion technique.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="domain-examples">
+                        <h4 class="examples-title">Example Domain Expansions:</h4>
+                        <div class="examples-list">
+                            <div class="example-item">
+                                <span class="example-domain">GOLDEN THRONE OF INFINITY</span>
+                                <span class="example-desc">- A domain of eternal power and divine authority</span>
+                            </div>
+                            <div class="example-item">
+                                <span class="example-domain">FROZEN STORM OF THE DARK VEIL</span>
+                                <span class="example-desc">- A domain of icy chaos shrouded in mystery</span>
+                            </div>
+                            <div class="example-item">
+                                <span class="example-domain">HEAVENLY SWORD OF DESTRUCTION</span>
+                                <span class="example-desc">- A domain of divine judgment and absolute power</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <div class="card text-center">
+                    <h3 class="share-title">Share Your Domain</h3>
+                    <p class="share-description">Found an awesome domain expansion? Share it with your friends!</p>
+                    <div id="shareButtons" class="share-buttons hidden">
+                        <button class="btn share-btn" onclick="copyDomainToClipboard()">📋 Copy to Clipboard</button>
+                        <button class="btn share-btn" onclick="shareDomain()">📱 Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+                <p class="footer-text">
+                    Built by Nexus ❤️ Powered by Nexus
+                </p>
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+            </div>
+            <p class="footer-subtitle">Domain Expansion of Code • DJS_YT Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - DJS_YT</title>
+    <meta name="description" content="Admin panel for managing contact form submissions and project requests. Secure access for DJS_YT portfolio management.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">DJS_YT</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="domain.html">Domain Generator</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admin Panel</h2>
+                <div class="divider"></div>
+                <p class="section-description">Manage contact form submissions and project requests</p>
+            </div>
+            
+            <!-- Admin Controls -->
+            <div class="admin-controls">
+                <div class="card">
+                    <div class="admin-header">
+                        <h3>📧 Contact Form Management</h3>
+                        <div class="admin-actions">
+                            <button class="btn admin-btn" onclick="refreshSubmissions()">🔄 Refresh</button>
+                            <button class="btn admin-btn" onclick="exportSubmissions()">📥 Export CSV</button>
+                            <button class="btn admin-btn" onclick="clearAllSubmissions()" style="background: linear-gradient(to right, #dc2626, #ef4444);">🗑️ Clear All</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Submissions Stats -->
+                    <div class="submissions-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalSubmissions">0</div>
+                            <div class="stat-label">Total Submissions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="todaySubmissions">0</div>
+                            <div class="stat-label">Today</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="weekSubmissions">0</div>
+                            <div class="stat-label">This Week</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter and Search -->
+            <div class="admin-filters">
+                <div class="card">
+                    <div class="filter-header">
+                        <h4>🔍 Filter & Search</h4>
+                    </div>
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <input type="text" class="form-input" id="searchInput" placeholder="Search by name, email, or description...">
+                        </div>
+                        <div class="filter-group">
+                            <select class="form-select" id="serviceFilter">
+                                <option value="">All Services</option>
+                                <option value="discord-bot">Discord Bot Development</option>
+                                <option value="minecraft-addon">Minecraft Add-on</option>
+                                <option value="minecraft-skin">Minecraft Skin</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select class="form-select" id="dateFilter">
+                                <option value="">All Time</option>
+                                <option value="today">Today</option>
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submissions List -->
+            <div class="submissions-container">
+                <div class="card">
+                    <div id="submissionsList" class="submissions-list">
+                        <div class="loading-state">
+                            <div class="loading-spinner">🔄</div>
+                            <p>Loading submissions...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Actions Modal -->
+            <div id="actionModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 id="modalTitle">Confirm Action</h4>
+                        <button class="modal-close" onclick="closeModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalMessage">Are you sure you want to perform this action?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn modal-btn-cancel" onclick="closeModal()">Cancel</button>
+                        <button class="btn modal-btn-confirm" id="confirmAction">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+                <p class="footer-text">
+                    Built by Nexus ❤️ Powered by Nexus
+                </p>
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+            </div>
+            <p class="footer-subtitle">Domain Expansion of Code • DJS_YT Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

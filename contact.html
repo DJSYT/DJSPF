@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DJS_YT</title>
+    <meta name="description" content="Contact DJS_YT for custom Discord bots, Minecraft development, web applications, and more. Professional development services with quick turnaround.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">DJS_YT</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="domain.html">Domain Generator</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Order / Contact</h2>
+                <div class="divider"></div>
+                <p class="section-description">Ready to bring your project to life?</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="card">
+                    <div class="contact-form-header">
+                        <h3>📋 Project Request Form</h3>
+                        <p>Fill out the form below and I'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label class="form-label">👤 Name</label>
+                            <input type="text" class="form-input" name="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">📧 Email</label>
+                            <input type="email" class="form-input" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">⚙️ Service</label>
+                            <select class="form-select" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="discord-bot">Discord Bot Development</option>
+                                <option value="minecraft-addon">Minecraft Add-on</option>
+                                <option value="minecraft-skin">Minecraft Skin</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">📝 Project Description</label>
+                            <textarea class="form-textarea" name="description" placeholder="Describe your project requirements in detail...&#10;&#10;Include:&#10;• What you want built&#10;• Key features needed&#10;• Timeline expectations&#10;• Budget range&#10;• Any specific requirements" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn form-submit-btn">
+                            📤 Send Order Request
+                        </button>
+                    </form>
+                    
+                    <div id="formMessage" class="form-message hidden"></div>
+                </div>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="contact-info">
+                <div class="grid grid-2">
+                    <div class="card text-center">
+                        <div class="contact-icon">💬</div>
+                        <h3>Direct Contact</h3>
+                        <p class="contact-detail">contact@djs-yt.dev</p>
+                        <p class="contact-desc">For urgent inquiries or direct communication</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="contact-icon">⚡</div>
+                        <h3>Response Time</h3>
+                        <p class="contact-detail">Within 24 hours</p>
+                        <p class="contact-desc">I respond to all inquiries quickly and professionally</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Pricing Guide -->
+            <div class="pricing-guide">
+                <div class="card">
+                    <h3 class="pricing-title">💰 Service Pricing Guide</h3>
+                    <div class="grid grid-2">
+                        <div class="pricing-item">
+                            <h4>🤖 Discord Bot Development</h4>
+                            <p class="price-range">$50 - $200+</p>
+                            <ul class="pricing-features">
+                                <li>Basic moderation bot: $50-80</li>
+                                <li>Advanced features + AI: $100-150</li>
+                                <li>Complex multi-server bot: $200+</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-item">
+                            <h4>🌐 Web Development</h4>
+                            <p class="price-range">$100 - $500+</p>
+                            <ul class="pricing-features">
+                                <li>Landing page: $100-200</li>
+                                <li>Portfolio website: $200-350</li>
+                                <li>Full web app: $500+</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-item">
+                            <h4>📦 Minecraft Add-ons</h4>
+                            <p class="price-range">$30 - $150+</p>
+                            <ul class="pricing-features">
+                                <li>Simple plugin: $30-60</li>
+                                <li>Custom gameplay mod: $80-120</li>
+                                <li>Complete addon pack: $150+</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-item">
+                            <h4>🎨 Custom Skins & Packs</h4>
+                            <p class="price-range">$20 - $80+</p>
+                            <ul class="pricing-features">
+                                <li>Custom skin: $20-35</li>
+                                <li>Resource pack: $50-80</li>
+                                <li>Texture pack bundle: $80+</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricing-note">
+                        <p><strong>Note:</strong> Prices vary based on complexity, timeline, and specific requirements. 
+                        Contact me for a detailed quote tailored to your project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+                <p class="footer-text">
+                    Built by Nexus ❤️ Powered by Nexus
+                </p>
+                <img src="https://i.ibb.co/d0t0q10s/Nexus-bot-avatar.png" alt="Nexus" class="footer-logo">
+            </div>
+            <p class="footer-subtitle">Domain Expansion of Code • DJS_YT Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
